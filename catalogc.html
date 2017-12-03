@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> xpedia--welcome to xpedia </title>
+
+    <!-- Global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet"
+          type="text/css">
+    <link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/minified/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/minified/core.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/minified/components.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/minified/colors.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="assets/css/catalog.css" type="text/css">
+    <!-- /global stylesheets -->
+
+    <!-- Core JS files -->
+    <script type="text/javascript" src="assets/js/plugins/loaders/pace.min.js"></script>
+    <script type="text/javascript" src="assets/js/core/libraries/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/core/libraries/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/loaders/blockui.min.js"></script>
+    <script type="text/javascript" src="assets/js/echarts.js"></script>
+    <script type="text/javascript" src="assets/js/data-tool.js"></script>
+    <!-- /core JS files -->
+
+    <!-- Theme JS files -->
+    <script type="text/javascript" src="assets/js/plugins/visualization/d3/d3.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/forms/styling/switchery.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/forms/styling/uniform.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/ui/moment/moment.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/pickers/daterangepicker.js"></script>
+
+    <script type="text/javascript" src="assets/js/core/app.js"></script>
+    <script type="text/javascript" src="assets/js/pages/dashboard.js"></script>
+
+    <!-- /theme JS files -->
+
+</head>
+
+<body>
+
+<!-- Main navbar -->
+<div class="navbar navbar-default header-highlight">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="index.html"><img src="assets/images/logo_light.png" alt=""></a>
+
+        <ul class="nav navbar-nav visible-xs-block">
+            <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+            <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+        </ul>
+    </div>
+
+    <div class="navbar-collapse collapse" id="navbar-mobile">
+        <ul class="nav navbar-nav">
+            <li><a class="sidebar-control sidebar-main-toggle hidden-xs"><i class="icon-paragraph-justify3"></i></a>
+            </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown language-switch">
+                <a class="dropdown-toggle" data-toggle="dropdown">
+                    <img src="assets/images/flags/cn.png" class="position-left" alt=""> 中文
+                    <span class="caret"></span>
+                </a>
+
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="deutsch"><img src="assets/images/flags/de.png" alt=""> Deutsch</a>
+                    </li>
+                    <li>
+                        <a class="ukrainian"><img src="assets/images/flags/ua.png" alt=""> Українська</a>
+                    </li>
+                    <li>
+                        <a class="english"><img src="assets/images/flags/gb.png" alt=""> English</a>
+                    </li>
+                    <li>
+                        <a class="espana"><img src="assets/images/flags/es.png" alt=""> España</a>
+                    </li>
+                    <li>
+                        <a class="russian"><img src="assets/images/flags/ru.png" alt=""> Русский</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="dropdown" style="display: none;" id="inform_module">
+                <!--更新通知部分-->
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="icon-bubbles4"></i>
+                    <span class="visible-xs-inline-block position-right">Messages</span>
+                    <span class="badge bg-warning-400">1</span>
+                </a>
+
+                <div class="dropdown-menu dropdown-content width-350">
+                    <div class="dropdown-content-heading">
+                        消息通知
+                    </div>
+
+                    <ul class="media-list dropdown-content-body">
+                        <li class="media">
+                            <div class="media-left">
+                                <img src="assets/images/placeholder.jpg" class="img-circle img-sm" alt="">
+                                <span class="badge bg-danger-400 media-badge">135</span>
+                            </div>
+
+                            <div class="media-body">
+                                <a href="#" class="media-heading">
+                                    <span class="text-semibold">诗词图谱</span>
+                                    <span class="media-annotation pull-right">22:58</span>
+                                </a>
+
+                                <span class="text-muted">《全唐诗》新增135条数据...</span>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <div class="dropdown-content-footer">
+                        <a href="#" data-popup="tooltip" title="所有信息"><i class="icon-menu display-block"></i></a>
+                    </div>
+                </div>
+            </li>
+            <li id="loginbox">
+                <a data-toggle="modal" data-target="#modal_form_inline">登陆</a>
+            </li>
+            <li id="registerbox">
+                <a data-toggle="modal" data-target="#modal_form_inline2">注册</a>
+            </li>
+
+            <li class="dropdown dropdown-user" style="display: none" id="usermodule">
+                <!--登陆用户部分-->
+                <a class="dropdown-toggle" data-toggle="dropdown">
+                    <img src="assets/images/placeholder.jpg" alt="">
+                    <span>Felixy</span>
+                    <i class="caret"></i>
+                </a>
+
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li><a href="userpage.html"><i class="icon-user-plus"></i>我的足迹</a></li>
+                    <li class="divider"></li>
+                    <li><a href="userpage.html"><i class="icon-cog5"></i> 我的收藏</a></li>
+                    <li><a id="quitlogin"><i class="icon-switch2"></i>退出登陆</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- /main navbar -->
+
+
+<!-- Page container -->
+<div class="page-container">
+
+    <!-- Page content -->
+    <div class="page-content">
+
+        <!-- Main sidebar -->
+        <div class="sidebar sidebar-main">
+            <div class="sidebar-content">
+
+                <!-- Main navigation -->
+                <div class="sidebar-category sidebar-category-visible">
+                    <div class="category-content no-padding">
+                        <ul class="navigation navigation-main navigation-accordion">
+
+                            <!-- Main -->
+                            <li class="navigation-header"><span>Main</span> <i class="icon-menu" title="Main pages"></i>
+                            </li>
+                            <li><a href="index.html"><i class="icon-home4"></i> <span>介绍</span></a></li>
+                            <li><a href="muluye.html"><i class="icon-home9"></i><span>目录</span></a></li>
+                            <li class="active">
+                                <a href="#"><i class="icon-stack2"></i> <span>图谱概览</span></a>
+                                <ul>
+                                    <li><a href="catalog.html">诗人图谱</a></li>
+                                    <li><a href="catalogc.html">诗人图谱-环形</a></li>
+                                    <li><a href="Card.html">诗人卡片</a></li>
+                                    <li><a href="poetplace.html">诗人轨迹</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="search.html"><i class="icon-list-unordered"></i> <span>查询</span></a></li>
+                            <li><a href="AidedAnalysis.html"><i class="icon-list-unordered"></i> <span>辅助工具</span></a>
+                                <ul>
+                                    <li><a href="ComAnalysis.html">诗人及诗歌论文分析</a></li>
+                                    <li><a href="Analysis.html">综合分析工具</a></li>
+                                    <li><a href="xiaofei.html">诗歌小菲</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><i class="icon-copy"></i> <span>API</span></a>
+                                <ul>
+                                    <li><a href="API.html" id="layout1">API手册</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><i class="icon-stack"></i> <span>出版</span></a>
+                                <ul>
+                                    <li><a href="publication.html">出版图书</a></li>
+                                    <li>
+                                        <a href="#">数据库</a>
+                                        <ul>
+                                            <li><a href="baikedatabase.html">百度百科</a></li>
+                                            <li><a href="doubandatabase.html">豆瓣</a></li>
+                                            <li><a href="poemdatabase.html">诗词</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="navigation-divider"></li>
+                                    <li><a href="referinfo.html">引用次数</a></li>
+                                    <li><a href="contentmanager.html">页面内容管理</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="Game.html"><i class="icon-list-unordered"></i> <span>游戏</span></a></li>
+                            <li><a href="Aboutus.html"><i class="icon-list-unordered"></i> <span>关于我们</span></a></li>
+                            <!-- /main -->
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- /main navigation -->
+
+            </div>
+        </div>
+        <!-- /main sidebar -->
+
+
+        <!-- Main content -->
+        <div class="content-wrapper">
+
+            <!-- Content area -->
+            <div class="content">
+
+                <div class="row">
+                    <!--图谱部分-->
+                    <div class="col-md-9">
+                        <div class="panel panel-flat">
+                            <!--<div class="panel-heading">-->
+                                <!--<h6 class="panel-title"> </h6>-->
+                                <!--<div class="heading-elements">-->
+                                    <!--<form class="heading-form" action="#">-->
+                                        <!--<div class="form-group hidden">-->
+                                            <!--<label class="checkbox-inline checkbox-switchery checkbox-right switchery-xs">-->
+                                                <!--<input type="checkbox" id="catalog_showModulebox" class="switch" onclick="showModulebox()">-->
+                                                <!--模板查询:-->
+                                            <!--</label>-->
+                                        <!--</div>-->
+                                    <!--</form>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <div class="position-relative">
+                                <div class="position-relative" style="width:100%;height:560px;z-index:100;"
+                                     id="tupuall"></div>
+                                <div class="position-relative" style="width:100%;height:560px;z-index:10;display: none;"
+                                     id="tupuone"></div>
+                                <script type="text/javascript" src="assets/js/fonttypechange.js"></script>
+                                <script type="text/javascript" src="assets/js/tupu2cimprove.js"></script>
+                                <script type="text/javascript" src="assets/js/tupu3.js"></script>
+                                <!--<script type="text/javascript" src="assets/js/tupu.js"></script>-->
+                            </div>
+                        </div>
+                    </div>
+                    <!--图谱信息部分-->
+                    <div class="col-md-3">
+                        <div class="panel panel-flat" id="panel1" style="display: none;">
+                            <div class="panel-heading panel-success">
+                                <h6 class="panel-title">所选节点:</h6>
+                            </div>
+                            <div class="panel-body">
+                                <h6 id="selectnode">&nbsp;</h6>
+                            </div>
+                        </div>
+                        <div class="panel panel-flat" id="panel2" style="display: none;">
+                            <div class="panel-heading panel-success">
+                                <h6 class="panel-title">详细信息:</h6>
+                            </div>
+                            <div class="panel-heading" id="info_description" style="width:100%;"></div>
+                            <a class="btn btn-success" style="width: 100%;" id="reloadbutton"
+                               onclick="reload()">显示详细图谱</a>
+                            <a class="btn btn-danger" style="width: 100%;" id="directinfo"
+                               onclick="showpoetpage()">显示诗人主页</a>
+                            <a class="btn btn-primary" style="width: 100%;display: none;" id="poembutton" onclick="showpoempage()">显示诗歌主页</a>
+                        </div>
+
+                        <div class="panel panel-flat hidden" id="Moudule_search_panel">
+                            <div class="panel-heading panel-success">
+                                <h6 class="panel-title">模板查询:</h6>
+                            </div>
+
+                            <div class="modulebox"
+                                 style="width:90%;text-align: left;display: inline-block;margin: 10px;border-radius: 5px;padding: 5px;">
+                                <input type="text" class="form-control" placeholder="主体"
+                                       aria-describedby="basic-addon1"
+                                       style="width:40%;margin: 0;" id="module1">
+
+                                <a class="btn btn-danger pull-right"
+                                   style="width: 30%;margin-top: 10px;margin-right: 20px;margin-bottom: 5px" id="submit3"
+                                   onclick="moduleSearch1();">查询</a>
+                            </div><!--modulebox结束-->
+
+                            <div class="modulebox"
+                                 style="text-align: left;display: inline-block;margin: 10px;border-radius: 5px;padding: 5px;">
+                                <input type="text" class="form-control" placeholder="主体"
+                                       aria-describedby="basic-addon1"
+                                       style="width:40%;margin: 0;display:inline-block" id="module2">
+
+                                <span>在</span>
+                                <span>
+                                <select class="form-control" style="width: 50%;margin:0;display: inline-block" id="select1">
+                                    <option>时间</option>
+                                    <option>地点</option>
+                                </select>
+                                </span>
+                                <div class="form-group has-success" style="margin-bottom: 0px">
+                                    <input type="text" class="form-control "
+                                           aria-describedby="basic-addon1"
+                                           style="width:30%;margin: 10px 0px 0px 0px;display:inline-block" id="module3">
+                                    <select class="form-control" style="width: 50%;margin:0;display: inline-block;" id="select2">
+                                        <option>的经历？</option>
+                                        <option>认识的人？</option>
+                                        <option>的作品？</option>
+                                    </select>
+                                </div>
+
+                                <a class="btn btn-danger pull-right"
+                                   style="width: 30%;margin-top: 10px;margin-right: 20px;margin-bottom: 5px" id="submit"
+                                   onclick="moduleSearch2()">查询</a>
+                            </div><!--modulebox结束-->
+
+                            <div class="modulebox"
+                                 style="text-align: left;display: inline-block;margin: 10px;border-radius: 5px;padding: 5px;">
+                                <input type="text" class="form-control" placeholder="主体A"
+                                       aria-describedby="basic-addon1"
+                                       style="width:45%;margin: 0;display:inline-block">
+
+                                <span>与</span>
+                                <input type="text" class="form-control" placeholder="主体B"
+                                       aria-describedby="basic-addon1"
+                                       style="width:45%;margin: 0;display:inline-block">
+
+                                <div class="form-group has-success" style="margin-bottom: 0px;margin-top: 10px;">
+                                    <select class="form-control" style="width: 50%;margin:0;display: inline-block;">
+                                        <option>的关系？</option>
+                                    </select>
+                                </div>
+
+                                <a class="btn btn-danger pull-right"
+                                   style="width: 30%;margin-top: 10px;margin-right: 20px;margin-bottom: 5px" id="submit2"
+                                   onclick="">查询</a>
+                            </div><!--modulebox结束-->
+
+                            <a class="btn  btn-block btn-lg btn-info" id="addModule" style="width: 100%" onclick="">添加模板</a>
+
+                            <script type="text/javascript" src="assets/js/modulesearch.js"></script>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 登陆注册页面 -->
+                <div id="modal_form_inline" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content text-center">
+                            <div class="modal-header">
+                                <h5 class="modal-title">登陆页面</h5>
+                            </div>
+
+                            <form action="#" class="form-inline">
+                                <div class="modal-body">
+                                    <div class="form-group has-feedback">
+                                        <label>用户名: </label>
+                                        <input type="text" placeholder="Your username" class="form-control" id="user_name">
+                                        <div class="form-control-feedback">
+                                            <i class="icon-user text-muted"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group has-feedback">
+                                        <label>密码: </label>
+                                        <input type="password" placeholder="Your password" class="form-control" id="password">
+                                        <div class="form-control-feedback">
+                                            <i class="icon-lock text-muted"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer text-center">
+                                    <button type="submit" class="btn btn-primary" id="login"> 登 陆 </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div id="modal_form_inline2" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content text-center">
+                            <div class="modal-header">
+                                <h5 class="modal-title">注册页面</h5>
+                            </div>
+
+                            <form action="#" class="form-inline">
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="form-group has-feedback">
+                                            <label>用户名: </label>
+                                            <input type="text" placeholder="Your username" class="form-control" id="r_user_name">
+                                            <div class="form-control-feedback">
+                                                <i class="icon-user text-muted"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group has-feedback">
+                                            <label>密  &#12288;码: </label>
+                                            <input type="password" placeholder="Your password" class="form-control" id="r_password">
+                                            <div class="form-control-feedback">
+                                                <i class="icon-lock text-muted"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group has-feedback">
+                                            <label>重  &#12288;复: </label>
+                                            <input type="password" placeholder="Repeat password" class="form-control" id="r_repeat">
+                                            <div class="form-control-feedback">
+                                                <i class="icon-lock text-muted"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="modal-footer text-center">
+                                    <button type="submit" class="btn btn-primary" id="create"> 注 册 </button>
+                                </div>
+                                <script type="text/javascript" src="assets/js/login.js"></script>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- /登陆注册页面 -->
+
+            </div>
+            <!-- Footer -->
+            <div class="footer text-muted">
+                &copy; 2017. <a href="http://www.felixy.xyz" target="_blank">Felixy</a>前端实验室
+            </div>
+            <!-- /footer -->
+
+        </div>
+        <!-- /content area -->
+
+    </div>
+    <!-- /main content -->
+
+</div>
+<!-- /page content -->
+
+</div>
+<!-- /page container -->
+<script type="text/javascript" src="assets/js/catlogjs.js"></script>
+
+<script type="text/javascript" src="assets/js/effect.js"></script>
+<script type="text/javascript" src="assets/js/searchadapter.js"></script>
+</body>
+
+</html>

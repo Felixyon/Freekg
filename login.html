@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登陆页面-xpedia</title>
+    <!-- Global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet"
+          type="text/css">
+    <link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" typ
+          e="text/css">
+    <link href="assets/css/minified/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/minified/core.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/minified/components.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/minified/colors.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="wangEditor/dist/css/wangEditor.min.css">
+    <!-- /global stylesheets -->
+
+    <!-- Core JS files -->
+    <script type="text/javascript" src="assets/js/plugins/loaders/pace.min.js"></script>
+    <script type="text/javascript" src="assets/js/core/libraries/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/core/libraries/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/loaders/blockui.min.js"></script>
+    <script type="text/javascript" src="assets/js/echarts.js"></script>
+    <!-- /core JS files -->
+
+    <!-- Theme JS files -->
+    <script type="text/javascript" src="assets/js/plugins/visualization/d3/d3.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/forms/styling/switchery.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/forms/styling/uniform.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/ui/moment/moment.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/pickers/daterangepicker.js"></script>
+
+    <script type="text/javascript" src="assets/js/core/app.js"></script>
+    <script type="text/javascript" src="assets/js/pages/dashboard.js"></script>
+    <!--本登陆页面的样式-->
+    <link rel="stylesheet" href="assets/css/login.css" type="text/css">
+</head>
+<body>
+<div id="wrapper" class="login-page">
+    <div id="login_form" class="form">
+        <form class="register-form">
+            <input type="text" placeholder="用户名" id="r_user_name"/>
+            <input type="password" placeholder="密码" id="r_password" />
+            <input type="text" placeholder="电子邮件" id="r_emial"/>
+            <button id="create">创建账户</button>
+            <p class="message">已经有了一个账户? <a href="#">立刻登录</a></p>
+        </form>
+        <form class="login-form">
+            <input type="text" placeholder="用户名" id="user_name"/>
+            <input type="password" placeholder="密码" id="password"/>
+            <button id="login">登　录</button>
+            <p class="message">还没有账户? <a href="#">立刻创建</a></p>
+        </form>
+    </div>
+    <script type="text/javascript" src="assets/js/login.js"></script>
+</div>
+</body>
+</html>

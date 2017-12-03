@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> xpedia--welcome to xpedia </title>
+
+    <!-- Global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet"
+          type="text/css">
+    <link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/minified/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/minified/core.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/minified/components.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/minified/colors.min.css" rel="stylesheet" type="text/css">
+    <!-- /global stylesheets -->
+
+    <!-- Core JS files -->
+    <script type="text/javascript" src="assets/js/plugins/loaders/pace.min.js"></script>
+    <script type="text/javascript" src="assets/js/core/libraries/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/core/libraries/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/loaders/blockui.min.js"></script>
+    <script type="text/javascript" src="assets/js/echarts.js"></script>
+    <script src="http://echarts.baidu.com/asset/map/js/china.js"></script>
+    <!-- /core JS files -->
+
+    <!-- Theme JS files -->
+    <script type="text/javascript" src="assets/js/plugins/visualization/d3/d3.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/forms/styling/switchery.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/forms/styling/uniform.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/ui/moment/moment.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/pickers/daterangepicker.js"></script>
+
+    <script type="text/javascript" src="assets/js/core/app.js"></script>
+    <!--<script type="text/javascript" src="assets/js/pages/dashboard.js"></script>-->
+    <script type="text/javascript" src="assets/js/fonttypechange.js"></script>
+    <script type="text/javascript" src="assets/js/poetinfo2.js"></script>
+
+    <!-- /theme JS files -->
+
+</head>
+
+<body>
+<!--上方导航栏-->
+<!-- Main navbar -->
+<div class="navbar navbar-default header-highlight">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="index.html"><img src="assets/images/logo_light.png" alt=""></a>
+
+        <ul class="nav navbar-nav visible-xs-block">
+            <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+            <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+        </ul>
+    </div>
+
+    <div class="navbar-collapse collapse" id="navbar-mobile">
+        <ul class="nav navbar-nav">
+            <li><a class="sidebar-control sidebar-main-toggle hidden-xs"><i class="icon-paragraph-justify3"></i></a>
+            </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown language-switch">
+                <a class="dropdown-toggle" data-toggle="dropdown">
+                    <img src="assets/images/flags/cn.png" class="position-left" alt=""> 中文
+                    <span class="caret"></span>
+                </a>
+
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="deutsch"><img src="assets/images/flags/de.png" alt=""> Deutsch</a>
+                    </li>
+                    <li>
+                        <a class="ukrainian"><img src="assets/images/flags/ua.png" alt=""> Українська</a>
+                    </li>
+                    <li>
+                        <a class="english"><img src="assets/images/flags/gb.png" alt=""> English</a>
+                    </li>
+                    <li>
+                        <a class="espana"><img src="assets/images/flags/es.png" alt=""> España</a>
+                    </li>
+                    <li>
+                        <a class="russian"><img src="assets/images/flags/ru.png" alt=""> Русский</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="dropdown" style="display: none;" id="inform_module">
+                <!--更新通知部分-->
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="icon-bubbles4"></i>
+                    <span class="visible-xs-inline-block position-right">Messages</span>
+                    <span class="badge bg-warning-400">1</span>
+                </a>
+
+                <div class="dropdown-menu dropdown-content width-350">
+                    <div class="dropdown-content-heading">
+                        消息通知
+                    </div>
+
+                    <ul class="media-list dropdown-content-body">
+                        <li class="media">
+                            <div class="media-left">
+                                <img src="assets/images/placeholder.jpg" class="img-circle img-sm" alt="">
+                                <span class="badge bg-danger-400 media-badge">135</span>
+                            </div>
+
+                            <div class="media-body">
+                                <a href="#" class="media-heading">
+                                    <span class="text-semibold">诗词图谱</span>
+                                    <span class="media-annotation pull-right">22:58</span>
+                                </a>
+
+                                <span class="text-muted">《全唐诗》新增135条数据...</span>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <div class="dropdown-content-footer">
+                        <a href="#" data-popup="tooltip" title="所有信息"><i class="icon-menu display-block"></i></a>
+                    </div>
+                </div>
+            </li>
+            <li id="loginbox">
+                <a data-toggle="modal" data-target="#modal_form_inline">登陆</a>
+            </li>
+            <li id="registerbox">
+                <a data-toggle="modal" data-target="#modal_form_inline2">注册</a>
+            </li>
+
+            <li class="dropdown dropdown-user" style="display: none" id="usermodule">
+                <!--登陆用户部分-->
+                <a class="dropdown-toggle" data-toggle="dropdown">
+                    <img src="assets/images/placeholder.jpg" alt="">
+                    <span>Felixy</span>
+                    <i class="caret"></i>
+                </a>
+
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li><a href="userpage.html"><i class="icon-user-plus"></i>我的足迹</a></li>
+                    <li class="divider"></li>
+                    <li><a href="userpage.html"><i class="icon-cog5"></i> 我的收藏</a></li>
+                    <li><a id="quitlogin"><i class="icon-switch2"></i>退出登陆</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- /main navbar -->
+
+
+<!-- Page container -->
+<div class="page-container">
+
+    <!-- Page content -->
+    <div class="page-content">
+        <!--左方导航栏-->
+        <!-- Main sidebar -->
+        <div class="sidebar sidebar-main">
+            <div class="sidebar-content">
+
+                <!-- Main navigation -->
+                <div class="sidebar-category sidebar-category-visible">
+                    <div class="category-content no-padding">
+                        <ul class="navigation navigation-main navigation-accordion">
+
+                            <!-- Main -->
+                            <li class="navigation-header"><span>Main</span> <i class="icon-menu" title="Main pages"></i>
+                            </li>
+                            <li><a href="index.html"><i class="icon-home4"></i> <span>介绍</span></a></li>
+                            <li><a href="muluye.html"><i class="icon-home9"></i><span>目录</span></a></li>
+                            <li class="active">
+                                <a href="#"><i class="icon-stack2"></i> <span>图谱概览</span></a>
+                                <ul>
+                                    <li><a href="catalog.html">诗人图谱</a></li>
+                                    <li><a href="catalogc.html">诗人图谱-环形</a></li>
+                                    <li><a href="Card.html">诗人卡片</a></li>
+                                    <li><a href="poetplace.html">诗人轨迹</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="search.html"><i class="icon-list-unordered"></i> <span>查询</span></a></li>
+                            <li><a href="AidedAnalysis.html"><i class="icon-list-unordered"></i> <span>辅助工具</span></a>
+                                <ul>
+                                    <li><a href="ComAnalysis.html">诗人及诗歌论文分析</a></li>
+                                    <li><a href="Analysis.html">综合分析工具</a></li>
+                                    <li><a href="xiaofei.html">诗歌小菲</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><i class="icon-copy"></i> <span>API</span></a>
+                                <ul>
+                                    <li><a href="API.html" id="layout1">API手册</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><i class="icon-stack"></i> <span>出版</span></a>
+                                <ul>
+                                    <li><a href="publication.html">出版图书</a></li>
+                                    <li>
+                                        <a href="#">数据库</a>
+                                        <ul>
+                                            <li><a href="baikedatabase.html">百度百科</a></li>
+                                            <li><a href="doubandatabase.html">豆瓣</a></li>
+                                            <li><a href="poemdatabase.html">诗词</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="navigation-divider"></li>
+                                    <li><a href="referinfo.html">引用次数</a></li>
+                                    <li><a href="contentmanager.html">页面内容管理</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="Game.html"><i class="icon-list-unordered"></i> <span>游戏</span></a></li>
+                            <li><a href="Aboutus.html"><i class="icon-list-unordered"></i>
+                                <span>关于我们</span></a></li>
+                            <!-- /main -->
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- /main navigation -->
+
+            </div>
+        </div>
+        <!-- /main sidebar -->
+
+
+        <!-- Main content -->
+        <div class="content-wrapper">
+
+            <!-- Page header -->
+            <div class="page-header">
+                <div class="page-header-content">
+                    <div class="page-title">
+                        <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">诗人</span> - 主页</h4>
+                    </div>
+                </div>
+                <div class="breadcrumb-line">
+                    <ul class="breadcrumb position-right" id="poetinfo_breadcrumb">
+                        <li><a href="catalog.html"><i class="icon-home2 position-left"></i> 图谱概览</a></li>
+                        <li><a href="catalog.html">诗人图谱</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /page header -->
+
+
+            <!-- Content area -->
+            <div class="content">
+                <!--切换相关诗人的多种图谱信息页面-->
+                <!-- Tabs -->
+                <ul class="nav nav-lg nav-tabs nav-tabs-bottom search-results-tabs" id="switchli">
+                    <li class="active"><a href="poetinfo.html" class="poetinfo"><i class="icon-display4 position-left"></i> 静态信息</a></li>
+                    <li><a href="poetplace.html" class="poetplace"><i class="icon-display4 position-left"></i> 诗人轨迹</a></li>
+                    <li><a href="search_users.html"><i class="icon-people position-left"></i> 关系图谱</a></li>
+                    <li><a href="search_images.html"><i class="icon-image2 position-left"></i> 作品图谱</a></li>
+                    <li><a onclick="showtupupage()"><i class="icon-file-play position-left"></i> 综合图谱</a></li>
+                </ul>
+                <!-- /tabs -->
+
+                <!-- 静态页面主体部分 -->
+                <div class="panel panel-body" id="staticinfobody">
+                    <p class="text-muted text-size-small">本信息收录更新于2017年6月1日，词条修改次数：0</p>
+
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <ul class="media-list search-results-list content-group">
+                                <!--<li class="media">-->
+                                    <!--<div class="panel" style="height: 550px;overflow-y:auto"><ul id="poetthings"></ul></div>-->
+                                <!--</li>-->
+                                <li class="media">
+                                    <div class="media-body">
+                                        <h6 class="media-heading"><a href="#"><strong>读书和漫游时期</strong>（三十五岁以前）</a></h6>
+                                        <ul class="list-inline list-inline-separate text-muted">
+                                            <li><a href="#" class="text-success">经历评分</a></li>
+                                            <li>
+                                                <i class="icon-star-full2 text-size-base text-warning-300"></i>
+                                                <i class="icon-star-full2 text-size-base text-warning-300"></i>
+                                                <i class="icon-star-full2 text-size-base text-warning-300"></i>
+                                                <i class="icon-star-full2 text-size-base text-warning-300"></i>
+                                                <i class="icon-star-full2 text-size-base text-warning-300"></i>
+                                                &nbsp;5 stars
+                                            </li>
+                                            <li>12次修改</li>
+                                        </ul>
+
+                                        这一时期曾先后游历吴、越（今江浙一带）和齐、赵（今山东北部、河北南部）,其间曾赴洛阳应举,不第.以后在洛阳遇李白,二人结下深厚友谊,继而又遇高适,三人同游梁、宋（今开封、商丘）.后来李杜又到齐州,分手后又遇于东鲁,再次分别,就没有机会再见面了。
+
+                                        <div class="website-search-results">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="content-group">
+                                                        <div class="media-body">
+                                                            <h6 class="media-heading"><a href="#">&#12288;李白</a></h6>
+                                                            在洛阳处遇到李白，二人接下深厚友谊
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-group">
+                                                        <div class="media-body">
+                                                            <h6 class="media-heading"><a href="#">《望岳》</a></h6>
+                                                            岱宗夫如何？齐鲁青未了。
+                                                            造化钟神秀，阴阳割昏晓。
+                                                            荡胸生层云，决眦入归鸟。
+                                                            会当凌绝顶，一览众山小。
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-group">
+                                                        <div class="media-body">
+                                                            <h6 class="media-heading"><a href="#">《春望》</a></h6>
+                                                            国破山河在，城春草木深。
+                                                            感时花溅泪，恨别鸟惊心。
+                                                            烽火连三月，家书抵万金。
+                                                            白头搔更短，浑欲不胜簪。
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="content-group">
+                                                        <div class="media-body">
+                                                            <h6 class="media-heading"><a href="#">&#12288;高适</a></h6>
+                                                            结识李白后偶遇高适，与高适同游梁、宋（今开封、商丘）。
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-group">
+                                                        <div class="media-body">
+                                                            <h6 class="media-heading"><a href="#">《赠李白》</a></h6>
+                                                            秋来相顾尚飘蓬，未就丹砂愧葛洪。
+                                                            痛饮狂歌空度日，飞扬跋扈为谁雄。
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="media related-searches">
+                                    <h6 class="no-margin-top">相关人物:</h6>
+                                    <div class="row">
+                                        <ul class="list list-unstyled">
+                                            <li class="col-md-4"><a href="#">与<strong>李白</strong>的关系</a></li>
+                                            <li class="col-md-4"><a href="#">创作<strong>三吏三别</strong>背景分析</a></li>
+                                            <li class="col-md-4"><a href="#">仕途不顺 ，<strong>命途多舛</strong></a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="panel panel-body">
+                                <div class="content-group">
+                                    <a href="#"><img class="img-responsive img-rounded" alt="" id="poet_main_image"></a>
+                                </div>
+
+                                <h5 class="text-semibold" id="poet_name_title"></h5>
+                                <p class="content-group">杜甫（712年—770年），字子美，汉族，本襄阳人，后徙河南巩县。 自号少陵野老，唐代伟大的现实主义诗人，与李白合称“李杜”。为了与另两位诗人李商隐与杜牧即“小李杜”区别，杜甫与李白又合称“大李杜”，杜甫也常被称为“老杜”。 杜甫在中国古典诗歌中的影响非常深远，被后人称为“诗圣”，他的诗被称为“诗史”。后世称其杜拾遗、杜工部，也称他杜少陵、杜草堂。</p>
+
+                                <ul class="list content-group">
+                                    <li><span class="text-semibold">本    名:</span> <a href="#">杜甫</a></li>
+                                    <li><span class="text-semibold">别    称:</span>杜少陵、杜工部等</li>
+                                    <li><span class="text-semibold">字:</span> <a href="#">子美</a></li>
+                                    <li><span class="text-semibold">号:</span> 号：少陵野老</li>
+                                    <li><span class="text-semibold">所处时代:</span> 唐朝</li>
+                                </ul>
+
+                                <div class="content-group">
+                                    <h6>相关图片</h6>
+                                    <div class="row" id="photosplaceholder">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="panel panel-body" style="width: 100%;height: 400px" id="statictupubody"></div>-->
+                <!-- /静态页面主体部分 这是用来做什么啊-->
+                <script type="text/javascript" src="assets/js/tupusum.js"></script>
+                <script type="text/javascript" src="assets/js/poetinfo.js"></script>
+                <!-- Footer -->
+                <div class="footer text-muted">
+                    &copy; 2017. <a href="http://www.felixy.xyz" target="_blank">Felixy</a>前端实验室
+                </div>
+                <!-- /footer -->
+
+            </div>
+            <!-- /content area -->
+            <!-- 登陆注册页面 -->
+            <div id="modal_form_inline" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content text-center">
+                        <div class="modal-header">
+                            <h5 class="modal-title">登陆页面</h5>
+                        </div>
+
+                        <form action="#" class="form-inline">
+                            <div class="modal-body">
+                                <div class="form-group has-feedback">
+                                    <label>用户名: </label>
+                                    <input type="text" placeholder="Your username" class="form-control" id="user_name">
+                                    <div class="form-control-feedback">
+                                        <i class="icon-user text-muted"></i>
+                                    </div>
+                                </div>
+
+                                <div class="form-group has-feedback">
+                                    <label>密码: </label>
+                                    <input type="password" placeholder="Your password" class="form-control" id="password">
+                                    <div class="form-control-feedback">
+                                        <i class="icon-lock text-muted"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer text-center">
+                                <button type="submit" class="btn btn-primary" id="login"> 登 陆 </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="modal_form_inline2" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content text-center">
+                        <div class="modal-header">
+                            <h5 class="modal-title">注册页面</h5>
+                        </div>
+
+                        <form action="#" class="form-inline">
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="form-group has-feedback">
+                                        <label>用户名: </label>
+                                        <input type="text" placeholder="Your username" class="form-control" id="r_user_name">
+                                        <div class="form-control-feedback">
+                                            <i class="icon-user text-muted"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group has-feedback">
+                                        <label>密  &#12288;码: </label>
+                                        <input type="password" placeholder="Your password" class="form-control" id="r_password">
+                                        <div class="form-control-feedback">
+                                            <i class="icon-lock text-muted"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group has-feedback">
+                                        <label>重  &#12288;复: </label>
+                                        <input type="password" placeholder="Repeat password" class="form-control" id="r_repeat">
+                                        <div class="form-control-feedback">
+                                            <i class="icon-lock text-muted"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="modal-footer text-center">
+                                <button type="submit" class="btn btn-primary" id="create"> 注 册 </button>
+                            </div>
+                            <script type="text/javascript" src="assets/js/login.js"></script>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /登陆注册页面 -->
+
+        </div>
+        <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+
+</div>
+<!-- /page container -->
+<script type="text/javascript" src="assets/js/poetplace2.js"></script>
+</body>
+</html>
